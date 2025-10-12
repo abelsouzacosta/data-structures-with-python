@@ -5,4 +5,4 @@ class Fraction:
 
     # Prints the fraction in a/b format
     def __str__(self) -> str:
-        return str(self.num) + "/" + str(self.den)
+        return f"{self.num}/{self.den}"
