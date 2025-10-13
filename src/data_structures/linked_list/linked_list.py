@@ -28,10 +28,13 @@ class LinkedList:
     def insert_at_tail(self, data) -> None:
         node = Node(data)
 
+        # Checks if the tail is not empty and then updates the next
+        # reference of the current tail and the reference of the list
+        # to the tail
         if self.tail is not None:
             self.tail.next = node
             self.tail = node
-        else:
+        else:  # otherwise points both head and tail to the same element
             self.head = node
             self.tail = node
 
@@ -42,16 +45,25 @@ class LinkedList:
         if self.head is not None:
             current = self.head
 
+            # Checks if the List is not empty and then
+            # goes until find the reference
             while current != None and current.data != reference:
                 current = current.next
 
+            """
+            Checks if the current node is valid and if the data reference
+            stores the reference given
+            Then updates the next reference of the current with the
+            new node created and set the next reference of the new node
+            with the old next reference of the reference given
+            """
             if current != None and current.data == reference:
                 old_next_element = current.next
                 current.next = node
                 node.next = old_next_element
-            else:
+            else:  # if the reference is not found then insert at the tail
                 self.insert_at_tail(data)
-        else:
+        else:  # if the list is empty then inserts at the head
             self.insert_at_head(data)
 
     # prints the list in this manner
