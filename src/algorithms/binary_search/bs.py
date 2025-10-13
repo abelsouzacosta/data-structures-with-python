@@ -10,3 +10,20 @@ This method performs a binary search in the following manner:
 Time complexity: O(log n)
 Space complexity: O(1) - constant space, since no new space will be allocated
 """
+
+
+def search(array: list[int], target) -> int | None:
+    first_element = 0
+    last_element = len(array) - 1
+
+    while first_element <= last_element:
+        middle = (first_element + last_element) // 2
+        element_at_the_middle = array[middle]
+
+        if target > element_at_the_middle:
+            first_element = middle + 1
+        elif target < element_at_the_middle:
+            last_element = middle - 1
+        else:
+            return middle
+    return None
