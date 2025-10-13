@@ -36,3 +36,19 @@ print("Remove a chosen element")
 my_list.delete_element(4)
 
 my_list.print_list()
+
+new_list = LinkedList()
+
+new_list.insert_at_head(1)
+new_list.insert_at_head(2)
+new_list.insert_at_head(3)
+new_list.insert_at_head(4)
+new_list.insert_at_head(5)
+new_list.insert_at_head(6)
+new_list.insert_at_head(7)
+
+print("New list: ")
+new_list.print_list()
+print("Reversing list")
+new_list.reverse()
+new_list.print_list()
