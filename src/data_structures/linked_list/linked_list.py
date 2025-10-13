@@ -66,6 +66,15 @@ class LinkedList:
         else:  # if the list is empty then inserts at the head
             self.insert_at_head(data)
 
+    # deletes an element from the head of the list
+    def delete_from_head(self) -> None:
+        if self.head is None:
+            raise Exception("List Empty")
+
+        # Takes the second element and sets as the new head
+        second_element = self.head.next
+        self.head = second_element
+
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
