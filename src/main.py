@@ -32,3 +32,7 @@ my_list.delete_from_tail()
 my_list.delete_from_tail()
 
 my_list.print_list()
+print("Remove a chosen element")
+my_list.delete_element(4)
+
+my_list.print_list()
