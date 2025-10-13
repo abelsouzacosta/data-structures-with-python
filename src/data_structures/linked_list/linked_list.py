@@ -35,6 +35,25 @@ class LinkedList:
             self.head = node
             self.tail = node
 
+    # insert element after a given element
+    def insert_after_element(self, reference, data) -> None:
+        node = Node(data)
+
+        if self.head is not None:
+            current = self.head
+
+            while current != None and current.data != reference:
+                current = current.next
+
+            if current != None and current.data == reference:
+                old_next_element = current.next
+                current.next = node
+                node.next = old_next_element
+            else:
+                self.insert_at_tail(data)
+        else:
+            self.insert_at_head(data)
+
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
