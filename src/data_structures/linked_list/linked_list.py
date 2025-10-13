@@ -10,6 +10,12 @@ class LinkedList:
     def insert_at_head(self, data) -> None:
         node = Node(data)
 
+        """
+        Checks if head is not empty and then inserts 
+        the new node at the head and sets the old head
+        as the next element of the node
+        """
+
         if self.head is not None:
             old_head = self.head
             self.head = node
