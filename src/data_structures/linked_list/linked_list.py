@@ -67,7 +67,27 @@ class LinkedList:
         else:  # if the list is empty then inserts at the head
             self.insert_at_head(data)
 
-    # deletes an element from the head of the list
+    # Removes an element from the tail
+    def delete_from_tail(self) -> None:
+        if self.head is None:
+            raise Exception("List Empty")
+
+        if self.head == self.tail:
+            self.head = self.tail = None
+        else:
+            current = self.head
+
+            """
+            Traverses the list until find the element which the next reference is 
+            the tail of the linked list and then updates its next referente to None
+            and sets it as the new tail
+            """
+            while current.next is not None and current.next != self.tail:
+                current = current.next
+
+            current.next = None
+            self.tail = current
+
     def delete_from_head(self) -> None:
         if self.head is None:
             raise Exception("List Empty")
