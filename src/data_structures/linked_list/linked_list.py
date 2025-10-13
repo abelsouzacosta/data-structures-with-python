@@ -1,10 +1,11 @@
 from .node import Node
+from typing import Optional
 
 
 class LinkedList:
     def __init__(self) -> None:
-        self.head = None
-        self.tail = None
+        self.head: Optional[Node] = None
+        self.tail: Optional[Node] = None
 
     # Insert an element at the head
     def insert_at_head(self, data) -> None:
