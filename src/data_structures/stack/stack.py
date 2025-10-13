@@ -27,3 +27,9 @@ class Stack:
         """
         return top
 
+    # returns the element at the top of the stack without
+    # removing it
+    def peek(self) -> int:
+        if self.is_empty():
+            raise Exception("Empty Stack")
+        return self.items[-1]
