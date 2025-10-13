@@ -88,6 +88,7 @@ class LinkedList:
             current.next = None
             self.tail = current
 
+    # Removes an element from the head of the list
     def delete_from_head(self) -> None:
         if self.head is None:
             raise Exception("List Empty")
