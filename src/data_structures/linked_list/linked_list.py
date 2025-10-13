@@ -97,6 +97,30 @@ class LinkedList:
         second_element = self.head.next
         self.head = second_element
 
+    def delete_element(self, reference: int) -> None:
+        if self.head is None:
+            raise Exception("List Empty")
+
+        if self.head.data == reference:
+            self.delete_from_head()
+
+        if self.tail is not None and self.tail.data == reference:
+            self.delete_from_tail()
+
+        current = self.head
+
+        """
+        Traverses the list until the node where the next element is the reference given
+        then updates the current node 'next' reference with the 'next' reference of the 
+        node to be deleted
+        """
+        while current.next is not None and current.next.data != reference:
+            current = current.next
+
+        node_to_delete = current.next
+        if node_to_delete is not None:
+            current.next = node_to_delete.next
+
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
