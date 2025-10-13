@@ -23,3 +23,9 @@ my_list.insert_at_tail(10)
 my_list.insert_after_element(5, 6)
 
 my_list.print_list()
+
+print("Removing elements")
+
+my_list.delete_from_head()
+
+my_list.print_list()
