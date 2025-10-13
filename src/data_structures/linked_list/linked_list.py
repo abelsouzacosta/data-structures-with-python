@@ -24,6 +24,17 @@ class LinkedList:
             self.head = node
             self.tail = node
 
+    # insert a element at the tail of the linked list
+    def insert_at_tail(self, data) -> None:
+        node = Node(data)
+
+        if self.tail is not None:
+            self.tail.next = node
+            self.tail = node
+        else:
+            self.head = node
+            self.tail = node
+
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
