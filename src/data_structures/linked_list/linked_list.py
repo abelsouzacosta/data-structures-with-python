@@ -18,3 +18,12 @@ class LinkedList:
             self.head = node
             self.tail = node
 
+    # prints the list in this manner
+    def print_list(self) -> None:
+        if self.head is None:
+            raise Exception("Empty list")
+
+        current = self.head
+        while current != None:
+            print(current.data)
+            current = current.next
