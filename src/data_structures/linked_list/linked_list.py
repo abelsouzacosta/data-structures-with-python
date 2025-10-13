@@ -121,6 +121,25 @@ class LinkedList:
         if node_to_delete is not None:
             current.next = node_to_delete.next
 
+    # Reverses the LinkedList
+    def reverse(self) -> None:
+        previous = None
+        current = self.head
+        old_head = self.head
+
+        while current is not None:
+            # stores the next element
+            next = current.next
+            # points the next reference to the previous position
+            current.next = previous
+            # updates the previous reference to the current
+            previous = current
+            # updates the current reference to the next
+            current = next
+
+        self.head = previous
+        self.tail = old_head
+
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
