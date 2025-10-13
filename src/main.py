@@ -27,5 +27,8 @@ my_list.print_list()
 print("Removing elements")
 
 my_list.delete_from_head()
+my_list.delete_from_tail()
+my_list.delete_from_tail()
+my_list.delete_from_tail()
 
 my_list.print_list()
