@@ -36,6 +36,19 @@ class DoublyLinkedList:
         node.previous = self.tail
         self.tail = node
 
+    def delete_from_head(self) -> None:
+        if self.head is None:
+            return
+
+        # unary list
+        if self.head.next is None:
+            self.head = None
+            self.tail = None
+            return
+
+        self.head = self.head.next
+        self.head.previous = None
+
     def print_list(self) -> None:
         if self.head is None:
             print("[]")
