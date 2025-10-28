@@ -17,8 +17,7 @@ class DoublyLinkedList:
         node = Node(data)
 
         if self.head is None:
-            self.head = node
-            self.tail = node
+            self.insert_at_empty_list(data)
             return
 
         node.next = self.head
