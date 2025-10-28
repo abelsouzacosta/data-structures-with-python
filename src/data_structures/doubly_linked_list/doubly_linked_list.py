@@ -20,3 +20,15 @@ class DoublyLinkedList:
         self.head = node
         return
 
+    def print_list(self) -> None:
+        if self.head is None:
+            print("[]")
+            return
+
+        current = self.head
+        while current is not None:
+            if current.next is None:
+                print(f"{current.data}\n")
+            else:
+                print(f"{current.data} <-> ", end="")
+            current = current.next
