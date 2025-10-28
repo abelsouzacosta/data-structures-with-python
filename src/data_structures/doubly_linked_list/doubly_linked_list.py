@@ -25,6 +25,17 @@ class DoublyLinkedList:
         self.head = node
         return
 
+    def insert_at_tail(self, data) -> None:
+        node = Node(data)
+
+        if self.tail is None:
+            self.insert_at_empty_list(data)
+            return
+
+        self.tail.next = node
+        node.previous = self.tail
+        self.tail = node
+
     def print_list(self) -> None:
         if self.head is None:
             print("[]")
