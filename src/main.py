@@ -1,5 +1,6 @@
 from data_structures.stack.stack import Stack
 from data_structures.linked_list.linked_list import LinkedList
+from data_structures.doubly_linked_list.doubly_linked_list import DoublyLinkedList
 
 stack = Stack()
 
@@ -52,3 +53,10 @@ new_list.print_list()
 print("Reversing list")
 new_list.reverse()
 new_list.print_list()
+
+dl = DoublyLinkedList()
+dl.insert_at_head(1)
+dl.insert_at_head(2)
+dl.insert_at_head(3)
+dl.insert_at_head(4)
+dl.print_list()
