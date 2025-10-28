@@ -32,3 +32,16 @@ class DoublyLinkedList:
             else:
                 print(f"{current.data} <-> ", end="")
             current = current.next
+
+    def print_list_reverse(self) -> None:
+        if self.head is None:
+            print("[]")
+            return
+
+        current = self.tail
+        while current is not None:
+            if current.previous is None:
+                print(f"{current.data}")
+            else:
+                print(f"{current.data} <-> ", end="")
+            current = current.previous
