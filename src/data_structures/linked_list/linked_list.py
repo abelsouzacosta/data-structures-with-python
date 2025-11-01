@@ -140,6 +140,20 @@ class LinkedList:
         self.head = previous
         self.tail = old_head
 
+    def remove_duplicates(self):
+        if self.head is None or self.head.next is None:
+            return
+
+        current = self.head
+        while current is not None:
+            runner = current
+            while runner.next is not None:
+                if runner.next.data == current.data:
+                    runner.next = runner.next.next
+                else:
+                    runner = runner.next
+            current = current.next
+
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
