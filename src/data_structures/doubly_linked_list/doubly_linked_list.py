@@ -36,6 +36,33 @@ class DoublyLinkedList:
         node.previous = self.tail
         self.tail = node
 
+    def insert_after_reference(self, data: int, reference: int) -> None:
+        if self.head is None or self.head.next is None:
+            return  # empty or unary list
+
+        current = self.head
+        while current is not None and current.data != reference:
+            current = current.next
+
+        if current is None:
+            return  # reference not found in the list
+
+        # creates the node
+        node = Node(data)
+        # captures the next reference of the current node
+        next = current.next
+
+        # updates the references of the node
+        node.next = next
+        node.previous = current
+        # updates the reference of the current node
+        current.next = node
+
+        if next is not None:
+            next.previous = node
+        else:
+            self.tail = node
+
     def delete_from_head(self) -> None:
         if self.head is None:
             return
