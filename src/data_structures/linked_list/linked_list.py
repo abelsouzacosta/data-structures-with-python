@@ -40,7 +40,7 @@ class LinkedList:
             self.tail = node
 
     # insert element after a given element
-    def insert_after_element(self, reference, data) -> None:
+    def insert_after_reference(self, data: int, reference: int) -> None:
         node = Node(data)
 
         if self.head is not None:
@@ -140,6 +140,7 @@ class LinkedList:
         self.head = previous
         self.tail = old_head
 
+    # will remove duplicates from the list
     def remove_duplicates(self):
         if self.head is None or self.head.next is None:
             return
