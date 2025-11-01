@@ -157,9 +157,12 @@ class LinkedList:
     # prints the list in this manner
     def print_list(self) -> None:
         if self.head is None:
-            raise Exception("Empty list")
+            print("[]")
 
         current = self.head
-        while current != None:
-            print(current.data)
+        while current is not None:
+            if current.next is None:
+                print(f"{current.data}")
+            else:
+                print(f"{current.data} -> ", end="")
             current = current.next
