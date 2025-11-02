@@ -27,9 +27,11 @@ class LinkedList:
             old_head = self.head
             self.head = node
             node.next = old_head
+            self.size += 1
         else:
             self.head = node
             self.tail = node
+            self.size += 1
 
     # insert a element at the tail of the linked list
     def insert_at_tail(self, data) -> None:
@@ -41,9 +43,11 @@ class LinkedList:
         if self.tail is not None:
             self.tail.next = node
             self.tail = node
+            self.size += 1
         else:  # otherwise points both head and tail to the same element
             self.head = node
             self.tail = node
+            self.size += 1
 
     # insert element after a given element
     def insert_after_reference(self, data: int, reference: int) -> None:
@@ -68,6 +72,7 @@ class LinkedList:
                 old_next_element = current.next
                 current.next = node
                 node.next = old_next_element
+                self.size += 1
             else:  # if the reference is not found then insert at the tail
                 self.insert_at_tail(data)
         else:  # if the list is empty then inserts at the head
@@ -80,6 +85,7 @@ class LinkedList:
 
         if self.head == self.tail:
             self.head = self.tail = None
+            self.size -= 1
         else:
             current = self.head
 
@@ -93,6 +99,7 @@ class LinkedList:
 
             current.next = None
             self.tail = current
+            self.size -= 1
 
     # Removes an element from the head of the list
     def delete_from_head(self) -> None:
@@ -102,6 +109,7 @@ class LinkedList:
         # Takes the second element and sets as the new head
         second_element = self.head.next
         self.head = second_element
+        self.size -= 1
 
     def delete_element(self, reference: int) -> None:
         if self.head is None:
@@ -126,6 +134,7 @@ class LinkedList:
         node_to_delete = current.next
         if node_to_delete is not None:
             current.next = node_to_delete.next
+            self.size -= 1
 
     # Reverses the LinkedList
     def reverse(self) -> None:
