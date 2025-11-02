@@ -32,3 +32,6 @@ class DynamicStack:
             return value
         return
 
+    def peek(self) -> Optional[int]:
+        return self.elements.get_head()
+
