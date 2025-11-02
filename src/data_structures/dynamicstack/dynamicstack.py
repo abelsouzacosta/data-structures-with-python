@@ -35,3 +35,16 @@ class DynamicStack:
     def peek(self) -> Optional[int]:
         return self.elements.get_head()
 
+    # swaps the top two elements in the list
+    def swap(self) -> None:
+        if self.is_empty():
+            return
+
+        top = self.pop()
+        second = self.pop()
+
+        if top is not None and second is not None:
+            self.push(top)
+            self.push(second)
+
+        return
