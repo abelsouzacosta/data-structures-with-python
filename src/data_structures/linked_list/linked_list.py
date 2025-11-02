@@ -6,6 +6,12 @@ class LinkedList:
     def __init__(self) -> None:
         self.head: Optional[Node] = None
         self.tail: Optional[Node] = None
+        self.size: int = 0
+
+    def get_head(self) -> Optional[int | None]:
+        if self.head is None:
+            return
+        return self.head.data
 
     # Insert an element at the head
     def insert_at_head(self, data) -> None:
