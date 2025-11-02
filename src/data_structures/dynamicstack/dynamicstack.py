@@ -11,3 +11,12 @@ allows to the stack to have variable size
 class DynamicStack:
     def __init__(self) -> None:
         self.elements = LinkedList()
+
+    def is_empty(self) -> bool:
+        return self.elements.head is None
+
+    def size(self) -> int:
+        if self.is_empty():
+            return 0
+        return self.elements.size
+
