@@ -155,6 +155,35 @@ class LinkedList:
         self.head = previous
         self.tail = old_head
 
+    # this method can be used by a stack to rotate elements until a given position
+    def reverse_until(self, position: int) -> None:
+        if position == 0:
+            return
+
+        if self.head is None or self.head.next is None:
+            return
+
+        if position >= self.size:
+            self.reverse()
+            return
+
+        previous = None
+        next = None
+        current = self.head
+        old_head = self.head
+        accumulator = 0
+        while current is not None and position != accumulator:
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+            accumulator += 1
+
+        if next is not None:
+            old_head.next = next
+
+        self.head = previous
+
     # will remove duplicates from the list
     def remove_duplicates(self):
         if self.head is None or self.head.next is None:
