@@ -10,6 +10,8 @@ ds.elements.print_list()
 ds.swap()
 ds.elements.print_list()
 print(ds.elements.size)
+ds.pop()
+ds.elements.print_list()
 
 ll = LinkedList()
 ll.insert_at_head(2)
