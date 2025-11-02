@@ -20,3 +20,6 @@ class DynamicStack:
             return 0
         return self.elements.size
 
+    def push(self, data: int) -> None:
+        # insert a element in the head of the linked list
+        self.elements.insert_at_head(data)
